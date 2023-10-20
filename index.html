@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="wraper">
+        <form action="" id="search-form">
+          <label for="city-name" class="label-sity-name"
+            >Please, enter the city name:</label
+          >
+          <input
+            type="text"
+            class="form-text"
+            name="city"
+            id="city-name-input"
+          />
+          <input
+            type="submit"
+            class="button-search"
+            value="Search"
+            id="button-search-input"
+          />
+          <input
+            type="button"
+            class="button-current"
+            value="Current"
+            id="button-current-input"
+          />
+        </form>
+
+        <div class="row main-window">
+          <div class="col-8">
+            <h1 class="city">
+              <span id="current-city"> Kharkov</span>,
+              <span id="current-country"> UA</span>
+            </h1>
+            <p class="current-date" id="demo">Sunday, 24 of September 22:00</p>
+            <p class="sky" id="sky">Partly cloudy</p>
+            <p class="temperature">
+              <span id="temperature-value"> 18 </span>
+              <span class="units">
+                <a href="#" class="celsius-link-a" id="celsius-link"
+                  ><sup> °C |</sup></a
+                >
+                <a href="#" class="celsius-link-a" id="fahrenheit-link"
+                  ><sup>°F</sup></a
+                >
+              </span>
+              <img
+                class="img-main"
+                src="https://cdn.icon-icons.com/icons2/2533/PNG/96/sun_weather_icon_152003.png"
+                alt="Weather icon"
+                width="120"
+              />
+            </p>
+          </div>
+          <div class="col-4 humidity">
+            <p>
+              Humidity: <span id="humidity"> 82</span>% <br />
+              Wind: <span id="wind"> 6 </span>km/h
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2 class="day-of-week">MON</h2>
+            <p>25.09</p>
+            <p>14°C/23°C</p>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2533/PNG/96/sun_weather_icon_152003.png"
+              alt="Weather icon"
+            />
+          </div>
+          <div class="col">
+            <h2 class="day-of-week">TUE</h2>
+            <p>26.09</p>
+            <p>13°C/22°C</p>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2533/PNG/96/sunny_weather_icon_152004.png"
+              alt="Weather icon"
+            />
+          </div>
+          <div class="col">
+            <h2 class="day-of-week">WED</h2>
+            <p>27.09</p>
+            <p>10°C/21°C</p>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2533/PNG/96/sunny_weather_icon_152004.png"
+              alt="Weather icon"
+            />
+          </div>
+          <div class="col">
+            <h2 class="day-of-week">THUR</h2>
+            <p>28.09</p>
+            <p>12°C/24°C</p>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2533/PNG/96/rain_weather_icon_151998.png"
+              alt="Weather icon"
+            />
+          </div>
+          <div class="col">
+            <h2 class="day-of-week">FRI</h2>
+            <p>29.09</p>
+            <p>8°C/18°C</p>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2533/PNG/96/lightning_weather_icon_151999.png"
+              alt="Weather icon"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="scripts/date.js"></script>
+  </body>
+</html>
