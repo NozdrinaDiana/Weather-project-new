@@ -5,8 +5,8 @@ body {
 }
 .wraper {
   background: rgba(141, 163, 80, 0.3);
-  margin: 16px;
-  padding: 16px;
+  margin: 12px;
+  padding: 12px;
   border-radius: 16px;
 }
 .form-text {
@@ -47,7 +47,7 @@ body {
 .city {
   font-size: 48px;
   margin: 8px;
-  margin-top: 20px;
+  margin-top: 12px;
   text-transform: capitalize;
 }
 .current-date {
@@ -56,13 +56,16 @@ body {
   font-weight: 600;
 }
 .sky {
-  font-size: 28px;
-  margin-left: 8px;
+  font-size: 24px;
+  margin: 0 8px;
   text-transform: capitalize;
+  margin-bottom: 0;
 }
 .temperature {
   font-size: 52px;
   margin-left: 8px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .celsius-link-a {
   font-size: 40px;
@@ -94,4 +97,21 @@ body {
 }
 .day-of-week {
   font-size: 18px;
+}
+.footer {
+  display: block;
+  width: 80%;
+  font-weight: 600;
+  font-size: 20px;
+  border: 1px solid rgb(45, 53, 23);
+  border-radius: 8px;
+  background: rgba(118, 139, 60, 0.6);
+  text-align: center;
+
+  line-height: 0.8;
+  padding: 4px 16px;
+  margin: auto;
+}
+.githab {
+  color: #000;
 }
