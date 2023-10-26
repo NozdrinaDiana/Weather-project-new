@@ -43,8 +43,9 @@ function showTemperature(response) {
   let newsky = document.querySelector("#sky");
   newsky.innerHTML = response.data.weather[0].description;
   
-  let temperature = document.querySelector("#temperature-value");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let newtemperature = document.querySelector("#temperature-value");
+  newtemperature.innerHTML = Math.round(celsiusTemperature);
   
   let newhumidity = document.querySelector("#humidity");
   newhumidity.innerHTML = response.data.main.humidity;
@@ -83,7 +84,28 @@ geobutton.addEventListener("click", getCurrentPosition);
 
 
 //F/C
-// let fahrenheit = document.querySelector("#fahrenheit-link");
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let newtemperature = document.querySelector("#temperature-value");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  newtemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let newtemperature = document.querySelector("#temperature-value");
+  newtemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", showFahrenheitTemperature);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", showCelsiusTemperature);
+
+ 
 //  let celsius = document.querySelector("#celsius-link");
 //let temperatureValue = document.querySelector("#temperature-value");
   
@@ -91,7 +113,7 @@ geobutton.addEventListener("click", getCurrentPosition);
   //event.preventDefault();
    // temperatureValue.innerHTML = "66";
   //}
-//fahrenheit.addEventListener("click", changeUnitsF);
+
 
 //function changeUnitsC(event) {
  // event.preventDefault();

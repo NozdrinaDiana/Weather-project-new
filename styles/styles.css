@@ -78,7 +78,11 @@ body {
 }
 .celsius-link-a:hover {
   color: #0a350f;
-  text-decoration: underline;
+  cursor: default;
+}
+.celsius-link-a .active {
+  cursor: default;
+  color: #0a350f;
 }
 .humidity {
   padding-top: 60px;
