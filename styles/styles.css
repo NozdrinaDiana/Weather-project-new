@@ -51,15 +51,19 @@ body {
   text-transform: capitalize;
 }
 .current-date {
-  font-size: 28px;
+  font-size: 32px;
   margin-left: 8px;
   font-weight: 600;
 }
 .sky {
-  font-size: 24px;
+  font-size: 28px;
   margin: 0 8px;
-  text-transform: capitalize;
   margin-bottom: 0;
+  line-height: 0.8;
+  font-weight: 400;
+}
+.sky:first-letter {
+  text-transform: capitalize;
 }
 .temperature {
   font-size: 52px;

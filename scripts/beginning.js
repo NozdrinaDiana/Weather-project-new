@@ -43,27 +43,22 @@ function showTemperature(response) {
   let newsky = document.querySelector("#sky");
   newsky.innerHTML = response.data.weather[0].description;
   
+  let newtemperature = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#temperature-value");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = newtemperature;
   
   let newhumidity = document.querySelector("#humidity");
   newhumidity.innerHTML = response.data.main.humidity;
 
+  let newwind = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
+  wind.innerHTML = newwind;
 
   let newcountry = document.querySelector("#current-country");
   newcountry.innerHTML = response.data.sys.country;
   
   let newcity = document.querySelector("#current-city");
   newcity.innerHTML = response.data.name;
-
-  let newdate = document.querySelector("#demo");
-  newdate.innerHTML = formatDate(response.data.dt * 1000);
-
-  let newicon = document.querySelector("#main-icon");
-  newicon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  newicon.setAttribute("alt", response.data.weather[0].description);
 }
 
 //geolocation
