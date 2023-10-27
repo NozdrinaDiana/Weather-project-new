@@ -6,7 +6,13 @@ let monthes = ["January", "February", "March", "April", "May", "June", "July", "
 let month = monthes[now.getMonth()];
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+ minutes = `0${minutes}`;
+}
 
 function formatDate(){
 let now =`${day}, ${date} of ${month} ${hours}:${minutes}`;
@@ -106,17 +112,3 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemperature);
 
  
-//  let celsius = document.querySelector("#celsius-link");
-//let temperatureValue = document.querySelector("#temperature-value");
-  
-//function changeUnitsF(event) {
-  //event.preventDefault();
-   // temperatureValue.innerHTML = "66";
-  //}
-
-
-//function changeUnitsC(event) {
- // event.preventDefault();
- //   temperatureValue.innerHTML = "18";
- // }
- // celsius.addEventListener("click", changeUnitsC);

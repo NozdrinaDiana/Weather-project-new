@@ -71,18 +71,16 @@ body {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 .celsius-link-a {
   font-size: 40px;
   text-decoration: none;
   color: #000;
 }
-.celsius-link-a:hover {
-  color: #0a350f;
+.celsius-link-a:hover,
+.celsius-link-a:active {
+  color: #0f5317;
   cursor: default;
-}
-.celsius-link-a .active {
-  cursor: default;
-  color: #0a350f;
 }
 .humidity {
   padding-top: 60px;
@@ -101,7 +99,7 @@ body {
   line-height: 0.8;
   font-size: 24px;
   font-weight: 600;
-  background: rgba(118, 139, 60, 0.6);
+  background: #151b0399;
 }
 .day-of-week {
   font-size: 18px;
@@ -115,7 +113,7 @@ body {
   border-radius: 8px;
   background: rgba(118, 139, 60, 0.6);
   text-align: center;
-
+  color: #010a01;
   line-height: 0.8;
   padding: 4px 16px;
   margin: auto;
