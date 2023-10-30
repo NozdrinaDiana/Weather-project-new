@@ -5,9 +5,10 @@ body {
 }
 .wraper {
   background: rgba(141, 163, 80, 0.3);
+  border: 1px solid rgb(45, 53, 23);
   margin: 12px;
   padding: 12px;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 .form-text {
   size: 40;
@@ -31,7 +32,7 @@ body {
   margin-left: 12px;
 }
 .button-current {
-  background-color: rgba(67, 75, 45, 0.4);
+  background-color: rgba(80, 90, 54, 0.4);
   padding: 8px;
   padding-left: 12px;
   border-radius: 8px;
@@ -89,11 +90,12 @@ body {
 .col {
   border: 1px solid rgb(45, 53, 23);
   border-radius: 8px;
-  background: rgba(118, 139, 60, 0.3);
-  margin: 16px;
+  background: rgba(118, 139, 60, 0.2);
+  margin: 12px;
   text-align: center;
-  line-height: 0.8;
+  line-height: 0.6;
   color: #000;
+  font-weight: 500;
 }
 .col:hover {
   line-height: 0.8;
@@ -102,7 +104,7 @@ body {
   background: #151b0399;
 }
 .day-of-week {
-  font-size: 18px;
+  font-size: 20px;
 }
 .footer {
   display: block;
