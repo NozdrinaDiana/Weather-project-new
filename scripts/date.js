@@ -15,7 +15,7 @@ if (minutes < 10) {
 }
 
 function formatDate(){
-let now =`${day}, ${date} of ${month} ${hours}:${minutes}`;
+let now =`${day}, the ${date}<sup>st</sup> of ${month} ${hours}:${minutes}`;
   return now;
 }
 console.log(formatDate(now));
@@ -28,7 +28,17 @@ function formatDay(timestamp) {
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return days[day];
 }
-
+function newMonth(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let month = date.getMonth();
+ let monthes = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+  return monthes[month];
+}
+function newDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let newdate = date.getDate();
+  return newdate;
+}
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
@@ -36,11 +46,11 @@ function displayForecast(response) {
   
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) { 
-    if (index < 6) {
+    if (index > 0 && index <6) {
       forecastHTML = forecastHTML + `
   <div class="col">
     <h2 class="day-of-week">${formatDay(forecastDay.dt)}</h2>
-    <p>25.09</p>
+    <p>The ${newDay(forecastDay.dt)}<sup>st</sup> of ${newMonth(forecastDay.dt)}</p>
     <p>
       <span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}</span>°C /
       <span class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}</span>°C
@@ -48,7 +58,7 @@ function displayForecast(response) {
     <img
       src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
       alt="Weather icon"
-      width="100"
+      width="90"
     />
     </div>
   `;
@@ -154,3 +164,5 @@ fahrenheit.addEventListener("click", showFahrenheitTemperature);
 
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemperature);
+
+search("Kharkiv");
