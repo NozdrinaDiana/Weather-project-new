@@ -22,28 +22,37 @@ console.log(formatDate(now));
 document.getElementById("demo").innerHTML = formatDate();
 
 //forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
   let newforecast = document.querySelector("#forecast");
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML = forecastHTML + `
-  <div class="col">
-    <h2 class="day-of-week">${day}</h2>
+  forecast.forEach(function (forecastDay, index) { 
+    if (index < 5) {
+      forecastHTML = forecastHTML + `
+  <div class="col-2">
+    <h2 class="day-of-week">${formatDay(forecastDay.dt)}</h2>
     <p>25.09</p>
     <p>
-      <span class="forecast-temperature-max">23</span>°C /
-      <span class="forecast-temperature-min">17</span>°C
+      <span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}</span>°C /
+      <span class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}</span>°C
     </p>
     <img
-      src="https://cdn.icon-icons.com/icons2/2533/PNG/96/sun_weather_icon_152003.png"
+      src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
       alt="Weather icon"
       width="100"
     />
     </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   newforecast.innerHTML = forecastHTML;
@@ -51,12 +60,9 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "3e895220a2e7601fff911f043d66afb7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+ let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-
-
-
 
 //temperature
 function showTemperature(response) {
